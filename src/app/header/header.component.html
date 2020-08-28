@@ -1,0 +1,93 @@
+
+<div class="header" style="height: 600px;">
+	<nav class="navbar navbar-expand-lg ">
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav ml-auto mt-5 mr-5">
+      			<li class="nav-item ">
+        			<a class="nav-link" href="#">HOME</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">ABOUT US</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">JOBS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CLIENTS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">EMPLOYERS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CONTACT US</a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+
+	<div class="title">
+		<h1>I'm looking for you...</h1>
+	</div>
+
+	<div class="input">
+		<div class="container banner_input">
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<input class="description  p-2" type="text" name="description" placeholder="Enter a job description">
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<button class="btn btn-primary search_btn pt-2 pb-2"><i class="fa fa-search"></i><span class="search pl-2">Search</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="register">
+		<button class="btn btn-primary btn_register text-center " data-target="#mymodal" data-toggle="modal">Register</button>
+	</div>	
+</div>
+
+<div class="modal fade" id="mymodal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" >
+				<h3 class="">Register</h3>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form #myForm="ngForm" action="#" [formGroup]="registerForm" (ngSubmit)=" registerData(registerForm)">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="First name"  formControlName="firstname" [(ngModel)]="userObj.firstname">
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="Last name"  formControlName="lastname" [(ngModel)]="userObj.lastname">
+							</div>
+						</div>
+						<input type="email" name="email" class="form-control mt-4" placeholder="Email" formControlName="email" [(ngModel)]="userObj.email">
+						<span>Age</span>  <input type="range" min="20" max="60" value="50" class="slide mt-4 " id="myRange">
+						<input type="text" name="phone" class="form-control mt-4" placeholder="Phone Number"  formControlName="number" [(ngModel)]="userObj.number">
+						<select class="form-control mt-4">
+  							<option>State</option>
+						</select>
+						<select class="form-control mt-4">
+  							<option>Country</option>
+						</select>
+						<input type="text" name="address" class="form-control mt-4" placeholder="Address"  formControlName="address" [(ngModel)]="userObj.faddress">
+    					<div class="row">
+    						<div class="col-md-6 mt-4">
+    							<a href="#"><button class="btn btn-default border-dark w-50">Cancel</button></a>
+    						</div>
+    						<div class="col-md-6 mt-4">
+    							<button type="button" class="btn btn-primary w-50" (click)="addUser(myForm.value)">Submit</button>
+    						</div>
+    					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
